@@ -1,0 +1,10 @@
+{% extends 'base.html' %} <!--Leyendo el estilo Bootstrap-->
+
+{% block content %}
+    <h2 class="text-success display-5 fw-bold" style="margin-bottom: 50px;">Sign Up</h2>
+    <form method="post" class="text-success">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="bottom-m btn btn-success btn-lg" type="submit">Sign Up</button>
+    </form>
+{% endblock content %}

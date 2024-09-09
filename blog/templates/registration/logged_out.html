@@ -1,0 +1,11 @@
+{% extends 'base.html' %} <!--Leyendo el estilo Bootstrap-->
+
+{% block content %}
+    <h2>Log Out</h2>
+    <h3>¡Gracias por su visita!</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Log Out</button>
+    </form>
+{% endblock content %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %} <!--Leyendo el estilo Bootstrap-->
+{% load static %} <!--Cargamos los estilos y diseños-->
+
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        {% for post in post_list %}
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body" style="height: 350px;">
+                    <h2 class="display-4 fw-bolder"><a href="">{{ post.title }}</a></h2>
+                    <p class="display-6">{{ post.body }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="container">
+            <div class="row align-items-start">
+                <div class="col-md-4">
+                  <div class="card">
+                    <div class="card-body d-flex align-items-center" style="height: 350px; box-shadow: rgba(14, 168, 48, 0.4) 0px 5px, rgba(14, 168, 48, 0.4) 0px 10px, rgba(14, 168, 48, 0.4) 0px 15px;">
+                      <img class="img-fluid mx-auto d-block" src="{% static 'img/python.png' %}">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+                    <div class="card-body d-flex align-items-center" style="height: 350px; box-shadow: rgba(14, 168, 48, 0.4) 0px 5px, rgba(14, 168, 48, 0.4) 0px 10px, rgba(14, 168, 48, 0.4) 0px 15px;">
+                      <img class="img-fluid mx-auto d-block" style="width: 60%" src="{% static 'img/html.png' %}">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+                    <div class="card-body d-flex align-items-center" style="height: 350px; filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0)); box-shadow: rgba(14, 168, 48, 0.4) 0px 5px, rgba(14, 168, 48, 0.4) 0px 10px, rgba(14, 168, 48, 0.4) 0px 15px;">
+                      <img class="img-fluid mx-auto d-block" style="width: 60%;" src="{% static 'img/django.Default' %}">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
