@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Django Blog</title>
+    </head>
+    <body>
+        <header>
+            <h1><a href="{% url 'home' %}">Django Blog</a></h1>
+        </header>
+        <nav>
+            <h1>SENA</h1>
+            {% if user.is_authenticated %}
+                <p>Bienvenido {{ user.username }}!</p>
+                <p><form id="logout-form" action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Log Out</button>
+                </form></p>
+
+            {% else %}
+                <p>No has iniciado sesión</p>
+                <p><form id="login-form" action="{% url 'login' %}" method="get">
+                    {% csrf_token %}
+                    <button type="submit">Log In</button>
+                </form></p>
+                <p><form id="signup-form" action="{% url 'signup' %}" method="get">
+                    {% csrf_token %}
+                    <button type="submit">Sign Up</button>
+                </form></p>
+            {% endif %}
+            </div>
+        </nav>
+        <main>
+            {% block content %}
+            {% endblock content %}
+        </main>
+    </body>
+</html>
